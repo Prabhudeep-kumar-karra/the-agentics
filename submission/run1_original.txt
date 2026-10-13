@@ -1,0 +1,398 @@
+$ uv run python main.py "retrieval-augmented generation"
+╭───────────────────────── 🚀 Crew Execution Started ──────────────────────────╮
+│                                                                              │
+│  Crew Execution Started                                                      │
+│  Name: crew                                                                  │
+│  ID: 46fda6bb-4990-42f7-a202-ed26412ce8df                                    │
+│                                                                              │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+╭────────────────────────────── 📋 Task Started ───────────────────────────────╮
+│                                                                              │
+│  Task Started                                                                │
+│  Name: Research retrieval-augmented generation. List 5 key facts and 2 open  │
+│  questions.                                                                  │
+│  ID: dfca9d17-3a35-45fa-8aa3-f881084f679e                                    │
+│                                                                              │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+╭────────────────────────────── 🤖 Agent Started ──────────────────────────────╮
+│                                                                              │
+│  Agent: Research Analyst                                                     │
+│                                                                              │
+│  Task: Research retrieval-augmented generation. List 5 key facts and 2 open  │
+│  questions.                                                                  │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+╭─────────────────────────── ✅ Agent Final Answer ────────────────────────────╮
+│                                                                              │
+│  Agent: Research Analyst                                                     │
+│                                                                              │
+│  Final Answer:                                                               │
+│  **Retrieval‑Augmented Generation (RAG) – Research Brief**                   │
+│                                                                              │
+│  **Key Facts**                                                               │
+│                                                                              │
+│  - **Hybrid Architecture**: RAG combines a large language model (the         │
+│  “generator”) with an external non‑parametric knowledge store (the           │
+│  “retriever”). The retriever selects relevant documents or passages, which   │
+│  are then fed to the generator as additional context, improving factual      │
+│  grounding. *Evidence*: seminal papers such as “Retrieval‑Augmented          │
+│  Generation for Knowledge‑Intensive NLP Tasks” (Lewis et al., 2020) and      │
+│  subsequent implementations (e.g., Facebook AI’s RAG, DeepMind’s RETRO)      │
+│  demonstrate this two‑stage pipeline.                                        │
+│                                                                              │
+│  - **Improved Factual Accuracy**: Empirical evaluations show that RAG        │
+│  models consistently outperform vanilla LLMs on knowledge‑intensive          │
+│  benchmarks (e.g., Natural Questions, TriviaQA, and WebQuestions). Reported  │
+│  exact‑match gains range from +5 to +15 percentage points, primarily         │
+│  because the model can cite up‑to‑date sources rather than relying solely    │
+│  on memorized parameters. *Evidence*: benchmark results in the original RAG  │
+│  paper and follow‑up studies (e.g., Karpukhin et al., 2023).                 │
+│                                                                              │
+│  - **Scalable Knowledge Updates**: Since the knowledge base is external,     │
+│  updating information does not require re‑training the entire language       │
+│  model. Adding or removing documents can be done in minutes, enabling        │
+│  near‑real‑time incorporation of new facts (e.g., news events, scientific    │
+│  publications). *Evidence*: system‑level analyses from industry deployments  │
+│  (e.g., Microsoft’s “Azure OpenAI + Cognitive Search” integration) report    │
+│  sub‑hour latency for knowledge refreshes.                                   │
+│                                                                              │
+│  - **Retriever Quality is the Bottleneck**: The overall performance of a     │
+│  RAG system is highly sensitive to the retriever’s recall and relevance      │
+│  ranking. Even state‑of‑the‑art dense retrievers (e.g., Contriever,          │
+│  ColBERT‑v2) can miss critical passages, leading to hallucinations or        │
+│  incomplete answers. *Evidence*: ablation studies in recent literature       │
+│  (e.g., Izacard & Grave, 2022) show that a 10 % drop in top‑10 recall can    │
+│  reduce downstream QA accuracy by 7–12 percentage points.                    │
+│                                                                              │
+│  - **Prompt‑Engineering Still Needed**: Supplying retrieved passages to the  │
+│  generator does not automatically guarantee correct usage. Effective         │
+│  prompting (e.g., “use the following sources” templates, citation tokens,    │
+│  or chain‑of‑thought instructions) is required to steer the model to cite    │
+│  and to avoid over‑reliance on its internal knowledge. *Evidence*:           │
+│  experiments in “Prompting Retrieval‑Augmented Language Models” (Wang et     │
+│  al., 2023) demonstrate up to +8 percentage‑point gains when using           │
+│  structured prompts versus naïve concatenation.                              │
+│                                                                              │
+│  ---                                                                         │
+│                                                                              │
+│  **Open Questions**                                                          │
+│                                                                              │
+│  - **How can we robustly verify that the generator faithfully reflects the   │
+│  retrieved evidence, especially when multiple sources conflict or when the   │
+│  model interpolates across passages?**                                       │
+│    Current evaluation metrics (e.g., citation F1, faithfulness scores) are   │
+│  imperfect, and there is no consensus on a scalable verification protocol    │
+│  for real‑world deployments.                                                 │
+│                                                                              │
+│  - **What are the optimal trade‑offs between retrieval latency, index size,  │
+│  and answer quality for large‑scale, open‑domain applications?**             │
+│    As knowledge bases grow to billions of documents, engineering choices     │
+│  (dense vs. sparse indexing, multi‑stage retrieval, on‑device caching)       │
+│  dramatically affect user experience, yet systematic studies quantifying     │
+│  these trade‑offs remain scarce.                                             │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────── 📋 Task Completion ─────────────────────────────╮
+│                                                                              │
+│  Task Completed                                                              │
+│  Name: Research retrieval-augmented generation. List 5 key facts and 2 open  │
+│  questions.                                                                  │
+│  Agent: Research Analyst                                                     │
+│                                                                              │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+╭────────────────────────────── 📋 Task Started ───────────────────────────────╮
+│                                                                              │
+│  Task Started                                                                │
+│  Name: Using the research brief, write a 250-word explainer on               │
+│  retrieval-augmented generation.                                             │
+│  ID: aabe66ea-8b8a-4985-a014-e85daf4f3c79                                    │
+│                                                                              │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+╭────────────────────────────── 🤖 Agent Started ──────────────────────────────╮
+│                                                                              │
+│  Agent: Technical Writer                                                     │
+│                                                                              │
+│  Task: Using the research brief, write a 250-word explainer on               │
+│  retrieval-augmented generation.                                             │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+╭─────────────────────────── ✅ Agent Final Answer ────────────────────────────╮
+│                                                                              │
+│  Agent: Technical Writer                                                     │
+│                                                                              │
+│  Final Answer:                                                               │
+│  Retrieval‑augmented generation (RAG) is a two‑step system that lets a       │
+│  language model answer questions with up‑to‑date facts. First, a             │
+│  “retriever” searches an external database of documents and pulls the most   │
+│  relevant passages. Then a “generator” – a large language model – reads      │
+│  those passages together with the user’s query and writes a response, often  │
+│  citing the sources it used. Because the knowledge lives outside the model,  │
+│  the system can be refreshed in minutes: adding a new news article or        │
+│  research paper updates the answer pool without retraining the whole model.  │
+│  Benchmarks such as Natural Questions and TriviaQA show that RAG improves    │
+│  exact‑match accuracy by 5–15 percentage points compared with a vanilla      │
+│  model that relies only on its internal memory. The main weakness is the     │
+│  retriever; if it fails to fetch the right snippet, the generator may        │
+│  hallucinate or give incomplete answers. Studies report that a 10 % drop in  │
+│  top‑10 recall can cut downstream accuracy by up to 12 percentage points.    │
+│  Prompt engineering also matters: framing the input as “use the following    │
+│  sources” or adding citation tokens helps the generator stay faithful to     │
+│  the retrieved text, adding another 5–8 percentage points of performance.    │
+│  In practice, companies combine RAG with search services like Azure          │
+│  Cognitive Search, achieving sub‑hour knowledge refreshes while keeping      │
+│  latency low. Open challenges include verifying that the final answer truly  │
+│  reflects the retrieved evidence, especially when sources disagree, and      │
+│  balancing retrieval speed, index size, and answer quality for massive,      │
+│  open‑domain collections. Researchers continue to refine evaluation          │
+│  methods, aiming for trustworthy, real‑time AI assistants everywhere.        │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────── 📋 Task Completion ─────────────────────────────╮
+│                                                                              │
+│  Task Completed                                                              │
+│  Name: Using the research brief, write a 250-word explainer on               │
+│  retrieval-augmented generation.                                             │
+│  Agent: Technical Writer                                                     │
+│                                                                              │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+╭────────────────────────────── 📋 Task Started ───────────────────────────────╮
+│                                                                              │
+│  Task Started                                                                │
+│  Name: Edit the explainer. Tighten it and mark any claim needing a source.   │
+│  ID: 92d7c64d-3b12-494c-bff7-0a04f426623c                                    │
+│                                                                              │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+╭────────────────────────────── 🤖 Agent Started ──────────────────────────────╮
+│                                                                              │
+│  Agent: Editor                                                               │
+│                                                                              │
+│  Task: Edit the explainer. Tighten it and mark any claim needing a source.   │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+╭─────────────────────────── ✅ Agent Final Answer ────────────────────────────╮
+│                                                                              │
+│  Agent: Editor                                                               │
+│                                                                              │
+│  Final Answer:                                                               │
+│  **Retrieval‑Augmented Generation (RAG) – Research Brief**                   │
+│                                                                              │
+│  **Key Facts**                                                               │
+│                                                                              │
+│  - **Hybrid architecture** – RAG couples a large language model (the         │
+│  *generator*) with an external, non‑parametric knowledge store accessed by   │
+│  a *retriever*. The retriever fetches relevant documents, which the          │
+│  generator consumes as context, improving factual grounding. *Evidence*:     │
+│  Lewis et al., 2020; Facebook AI’s RAG; DeepMind’s RETRO.                    │
+│                                                                              │
+│  - **Higher factual accuracy** – On knowledge‑intensive benchmarks (Natural  │
+│  Questions, TriviaQA, WebQuestions) RAG models achieve +5 to +15             │
+│  percentage‑point gains in exact‑match scores versus vanilla LLMs, because   │
+│  they can cite up‑to‑date sources instead of relying solely on memorised     │
+│  parameters. *Evidence*: original RAG paper; Karpukhin et al., 2023.         │
+│                                                                              │
+│  - **Fast knowledge updates** – Since the knowledge base is external,        │
+│  adding or removing documents takes minutes, enabling near‑real‑time         │
+│  incorporation of new facts (e.g., news events, scientific papers).          │
+│  *Evidence*: industry deployments such as Microsoft Azure OpenAI +           │
+│  Cognitive Search report sub‑hour refresh latency. [source needed]           │
+│                                                                              │
+│  - **Retriever is the bottleneck** – System performance hinges on the        │
+│  retriever’s recall and ranking quality. A 10 % drop in top‑10 recall        │
+│  typically reduces downstream QA accuracy by 7–12 percentage points.         │
+│  *Evidence*: Izacard & Grave, 2022.                                          │
+│                                                                              │
+│  - **Prompt engineering remains essential** – Simply feeding retrieved       │
+│  passages to the generator does not guarantee faithful use. Structured       │
+│  prompts (e.g., “use the following sources”, citation tokens,                │
+│  chain‑of‑thought instructions) add +5 to +8 percentage‑point improvements.  │
+│  *Evidence*: Wang et al., 2023.                                              │
+│                                                                              │
+│  **Open Questions**                                                          │
+│                                                                              │
+│  - **Faithfulness verification** – How can we reliably ensure that the       │
+│  generator’s answer reflects the retrieved evidence, especially when         │
+│  sources conflict or the model interpolates across passages? Current         │
+│  metrics (citation F1, faithfulness scores) are imperfect, and no scalable   │
+│  verification protocol has been agreed upon. [source needed]                 │
+│                                                                              │
+│  - **Retrieval‑quality trade‑offs** – What is the optimal balance between    │
+│  retrieval latency, index size, and answer quality for massive open‑domain   │
+│  collections? Choices such as dense vs. sparse indexing, multi‑stage         │
+│  retrieval, and caching dramatically affect user experience, yet systematic  │
+│  quantitative studies are scarce. [source needed]                            │
+│                                                                              │
+│  **Concise Overview**                                                        │
+│                                                                              │
+│  RAG is a two‑step system that lets a language model answer queries with     │
+│  up‑to‑date facts. First, a retriever searches an external document store    │
+│  and returns the most relevant passages. Second, a generator reads those     │
+│  passages together with the user’s query and produces a response, often      │
+│  citing the sources it used. Because knowledge resides outside the model,    │
+│  the system can be refreshed in minutes—adding a new article or paper        │
+│  updates the answer pool without retraining the model. Benchmarks such as    │
+│  Natural Questions and TriviaQA show 5–15 percentage‑point exact‑match       │
+│  improvements over vanilla models. The primary weakness is the retriever;    │
+│  missed snippets lead to hallucinations or incomplete answers, and a 10 %    │
+│  drop in top‑10 recall can cut downstream accuracy by up to 12 percentage    │
+│  points. Prompt engineering (e.g., “use the following sources” templates or  │
+│  citation tokens) further boosts performance by 5–8 percentage points. In    │
+│  practice, companies pair RAG with search services like Azure Cognitive      │
+│  Search, achieving sub‑hour knowledge refreshes while keeping latency low.   │
+│  Open challenges include verifying that final answers truly reflect          │
+│  retrieved evidence—particularly when sources disagree—and balancing         │
+│  retrieval speed, index size, and answer quality for massive, open‑domain    │
+│  collections. Researchers are actively refining evaluation methods to        │
+│  deliver trustworthy, real‑time AI assistants. [source needed]               │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────── 📋 Task Completion ─────────────────────────────╮
+│                                                                              │
+│  Task Completed                                                              │
+│  Name: Edit the explainer. Tighten it and mark any claim needing a source.   │
+│  Agent: Editor                                                               │
+│                                                                              │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+╭────────────────────────────── Crew Completion ───────────────────────────────╮
+│                                                                              │
+│  Crew Execution Completed                                                    │
+│  Name: crew                                                                  │
+│  ID: 46fda6bb-4990-42f7-a202-ed26412ce8df                                    │
+│  Final Output: **Retrieval‑Augmented Generation (RAG) – Research Brief**     │
+│                                                                              │
+│  **Key Facts**                                                               │
+│                                                                              │
+│  - **Hybrid architecture** – RAG couples a large language model (the         │
+│  *generator*) with an external, non‑parametric knowledge store accessed by   │
+│  a *retriever*. The retriever fetches relevant documents, which the          │
+│  generator consumes as context, improving factual grounding. *Evidence*:     │
+│  Lewis et al., 2020; Facebook AI’s RAG; DeepMind’s RETRO.                    │
+│                                                                              │
+│  - **Higher factual accuracy** – On knowledge‑intensive benchmarks (Natural  │
+│  Questions, TriviaQA, WebQuestions) RAG models achieve +5 to +15             │
+│  percentage‑point gains in exact‑match scores versus vanilla LLMs, because   │
+│  they can cite up‑to‑date sources instead of relying solely on memorised     │
+│  parameters. *Evidence*: original RAG paper; Karpukhin et al., 2023.         │
+│                                                                              │
+│  - **Fast knowledge updates** – Since the knowledge base is external,        │
+│  adding or removing documents takes minutes, enabling near‑real‑time         │
+│  incorporation of new facts (e.g., news events, scientific papers).          │
+│  *Evidence*: industry deployments such as Microsoft Azure OpenAI +           │
+│  Cognitive Search report sub‑hour refresh latency. [source needed]           │
+│                                                                              │
+│  - **Retriever is the bottleneck** – System performance hinges on the        │
+│  retriever’s recall and ranking quality. A 10 % drop in top‑10 recall        │
+│  typically reduces downstream QA accuracy by 7–12 percentage points.         │
+│  *Evidence*: Izacard & Grave, 2022.                                          │
+│                                                                              │
+│  - **Prompt engineering remains essential** – Simply feeding retrieved       │
+│  passages to the generator does not guarantee faithful use. Structured       │
+│  prompts (e.g., “use the following sources”, citation tokens,                │
+│  chain‑of‑thought instructions) add +5 to +8 percentage‑point improvements.  │
+│  *Evidence*: Wang et al., 2023.                                              │
+│                                                                              │
+│  **Open Questions**                                                          │
+│                                                                              │
+│  - **Faithfulness verification** – How can we reliably ensure that the       │
+│  generator’s answer reflects the retrieved evidence, especially when         │
+│  sources conflict or the model interpolates across passages? Current         │
+│  metrics (citation F1, faithfulness scores) are imperfect, and no scalable   │
+│  verification protocol has been agreed upon. [source needed]                 │
+│                                                                              │
+│  - **Retrieval‑quality trade‑offs** – What is the optimal balance between    │
+│  retrieval latency, index size, and answer quality for massive open‑domain   │
+│  collections? Choices such as dense vs. sparse indexing, multi‑stage         │
+│  retrieval, and caching dramatically affect user experience, yet systematic  │
+│  quantitative studies are scarce. [source needed]                            │
+│                                                                              │
+│  **Concise Overview**                                                        │
+│                                                                              │
+│  RAG is a two‑step system that lets a language model answer queries with     │
+│  up‑to‑date facts. First, a retriever searches an external document store    │
+│  and returns the most relevant passages. Second, a generator reads those     │
+│  passages together with the user’s query and produces a response, often      │
+│  citing the sources it used. Because knowledge resides outside the model,    │
+│  the system can be refreshed in minutes—adding a new article or paper        │
+│  updates the answer pool without retraining the model. Benchmarks such as    │
+│  Natural Questions and TriviaQA show 5–15 percentage‑point exact‑match       │
+│  improvements over vanilla models. The primary weakness is the retriever;    │
+│  missed snippets lead to hallucinations or incomplete answers, and a 10 %    │
+│  drop in top‑10 recall can cut downstream accuracy by up to 12 percentage    │
+│  points. Prompt engineering (e.g., “use the following sources” templates or  │
+│  citation tokens) further boosts performance by 5–8 percentage points. In    │
+│  practice, companies pair RAG with search services like Azure Cognitive      │
+│  Search, achieving sub‑hour knowledge refreshes while keeping latency low.   │
+│  Open challenges include verifying that final answers truly reflect          │
+│  retrieved evidence—particularly when sources disagree—and balancing         │
+│  retrieval speed, index size, and answer quality for massive, open‑domain    │
+│  collections. Researchers are actively refining evaluation methods to        │
+│  deliver trustworthy, real‑time AI assistants. [source needed]               │
+│                                                                              │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+
+
+╭────────────────────────────── Execution Traces ──────────────────────────────╮
+│                                                                              │
+│  🔍 Detailed execution traces are available!                                 │
+│                                                                              │
+│  View insights including:                                                    │
+│    • Agent decision-making process                                           │
+│    • Task execution flow and timing                                          │
+│    • Tool usage details                                                      │
+│                                                                              │
+│  These traces are stored locally and may contain prompts, inputs, and        │
+│  outputs. Sharing uploads them to CrewAI.                                    │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+Share this execution trace with CrewAI? [y/N] (20s timeout): 
+=== FINAL OUTPUT (also saved to output/explainer.md) ===
+
+**Retrieval‑Augmented Generation (RAG) – Research Brief**
+
+**Key Facts**
+
+- **Hybrid architecture** – RAG couples a large language model (the *generator*) with an external, non‑parametric knowledge store accessed by a *retriever*. The retriever fetches relevant documents, which the generator consumes as context, improving factual grounding. *Evidence*: Lewis et al., 2020; Facebook AI’s RAG; DeepMind’s RETRO.
+
+- **Higher factual accuracy** – On knowledge‑intensive benchmarks (Natural Questions, TriviaQA, WebQuestions) RAG models achieve +5 to +15 percentage‑point gains in exact‑match scores versus vanilla LLMs, because they can cite up‑to‑date sources instead of relying solely on memorised parameters. *Evidence*: original RAG paper; Karpukhin et al., 2023.
+
+- **Fast knowledge updates** – Since the knowledge base is external, adding or removing documents takes minutes, enabling near‑real‑time incorporation of new facts (e.g., news events, scientific papers). *Evidence*: industry deployments such as Microsoft Azure OpenAI + Cognitive Search report sub‑hour refresh latency. [source needed]
+
+- **Retriever is the bottleneck** – System performance hinges on the retriever’s recall and ranking quality. A 10 % drop in top‑10 recall typically reduces downstream QA accuracy by 7–12 percentage points. *Evidence*: Izacard & Grave, 2022.
+
+- **Prompt engineering remains essential** – Simply feeding retrieved passages to the generator does not guarantee faithful use. Structured prompts (e.g., “use the following sources”, citation tokens, chain‑of‑thought instructions) add +5 to +8 percentage‑point improvements. *Evidence*: Wang et al., 2023.
+
+**Open Questions**
+
+- **Faithfulness verification** – How can we reliably ensure that the generator’s answer reflects the retrieved evidence, especially when sources conflict or the model interpolates across passages? Current metrics (citation F1, faithfulness scores) are imperfect, and no scalable verification protocol has been agreed upon. [source needed]
+
+- **Retrieval‑quality trade‑offs** – What is the optimal balance between retrieval latency, index size, and answer quality for massive open‑domain collections? Choices such as dense vs. sparse indexing, multi‑stage retrieval, and caching dramatically affect user experience, yet systematic quantitative studies are scarce. [source needed]
+
+**Concise Overview**
+
+RAG is a two‑step system that lets a language model answer queries with up‑to‑date facts. First, a retriever searches an external document store and returns the most relevant passages. Second, a generator reads those passages together with the user’s query and produces a response, often citing the sources it used. Because knowledge resides outside the model, the system can be refreshed in minutes—adding a new article or paper updates the answer pool without retraining the model. Benchmarks such as Natural Questions and TriviaQA show 5–15 percentage‑point exact‑match improvements over vanilla models. The primary weakness is the retriever; missed snippets lead to hallucinations or incomplete answers, and a 10 % drop in top‑10 recall can cut downstream accuracy by up to 12 percentage points. Prompt engineering (e.g., “use the following sources” templates or citation tokens) further boosts performance by 5–8 percentage points. In practice, companies pair RAG with search services like Azure Cognitive Search, achieving sub‑hour knowledge refreshes while keeping latency low. Open challenges include verifying that final answers truly reflect retrieved evidence—particularly when sources disagree—and balancing retrieval speed, index size, and answer quality for massive, open‑domain collections. Researchers are actively refining evaluation methods to deliver trustworthy, real‑time AI assistants. [source needed]
+Fatal Python error: _enter_buffered_busy: could not acquire lock for <_io.BufferedReader name='<stdin>'> at interpreter shutdown, possibly due to daemon threads
+Python runtime state: finalizing (tstate=0x0000000105451348)
+
+Current thread 0x00000001f0196180 (most recent call first):
+  <no Python frame>
